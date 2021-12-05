@@ -189,5 +189,76 @@ namespace ProyectoCondominio.BLL
             }
             return lista;
         }
+
+        /*public static bool Pagar(Alquiler oAlquiler, Periodo oPeriodo, bool TieneDeuda, decimal MontoDeuda, out string mensaje)
+        {
+            Contexto contexto = new Contexto();
+
+            mensaje = string.Empty;
+            bool paso = false,paso2 = false, paso3 = false, paso4 = false;
+            bool respuesta = true;
+
+            if (TieneDeuda)
+            {
+                Deuda deuda = new Deuda();
+                deuda.IdPeriodo = oPeriodo.IdPeriodo;
+                deuda.MontoDeuda = MontoDeuda.ToString("0.00");
+                deuda.EstadoDeuda = "PENDIENTE";
+
+                paso = DeudaBLL.Guardar(deuda);
+
+                oPeriodo.EstadoPeriodo = "EN DEUDA";
+                oPeriodo.ProximoPagar = 0;
+                oPeriodo.IdAlquiler = oAlquiler.IdAlquiler;
+
+                paso2 = PeriodoBLL.Guardar(oPeriodo);
+
+                *//*query.AppendLine(string.Format("update PERIODO set EstadoPeriodo = 'EN DEUDA' , ProximoPagar = 0 ," +
+                " Monto = '{0}', FechaPago='{1}' WHERE IdAlquiler = {2} AND IdPeriodo = {3} AND NumeroPeriodo = {4};" +
+                "", oPeriodo.Monto, oPeriodo.FechaPago, oAlquiler.IdAlquiler, oPeriodo.IdPeriodo, oPeriodo.NumeroPeriodo));*//*
+            }
+            else
+            {
+                oPeriodo.EstadoPeriodo = "CANCELADO";
+                oPeriodo.ProximoPagar = 0;
+                oPeriodo.IdAlquiler = oAlquiler.IdAlquiler;
+
+                paso2 = PeriodoBLL.Guardar(oPeriodo);
+                *//*              query.AppendLine(string.Format("update PERIODO set EstadoPeriodo = 'CANCELADO' , ProximoPagar = 0 , Monto = '{0}', FechaPago='{1}' WHERE IdAlquiler = {2} AND IdPeriodo = {3} AND NumeroPeriodo = {4};", oPeriodo.Monto, oPeriodo.FechaPago, oAlquiler.IdAlquiler, oPeriodo.IdPeriodo, oPeriodo.NumeroPeriodo));
+                *//*
+            }
+
+            //VALIDAMOS SI ES EL ULTIMO PERIODO A PAGAR
+            if (oAlquiler.CantidadPeriodo > oPeriodo.NumeroPeriodo)
+            {
+                oPeriodo.NumeroPeriodo += 1;
+
+                paso2 = PeriodoBLL.Guardar(oPeriodo);
+                *//*query.AppendLine(string.Format("UPDATE PERIODO SET ProximoPagar = 1 WHERE IdAlquiler = {0} AND NumeroPeriodo = {1};", oAlquiler.IdAlquiler, oPeriodo.NumeroPeriodo));*//*
+            }
+            else
+            {
+                oAlquiler.Estado = "CERRADO";
+                paso3 = AlquilerBLL.Guardar(oAlquiler);
+                var Tipo = InmuebleBLL.Buscar(oAlquiler.IdInmueble);
+                Tipo.Estado = "LIBRE";
+                paso4 = InmuebleBLL.Guardar(Tipo);
+
+                *//*query.AppendLine(string.Format("UPDATE ALQUILER SET Estado = 'CERRADO' where IdAlquiler = {0};", oAlquiler.IdAlquiler));
+                query.AppendLine(string.Format("UPDATE INMUEBLE SET Estado = 'LIBRE' WHERE IdInmueble = (SELECT IdInmueble FROM ALQUILER WHERE IdAlquiler ={0});", oAlquiler.IdAlquiler));*//*
+            }
+
+
+                
+
+            if (paso == false && paso2 == false && paso3 == false && paso4 == false)
+            {
+                mensaje = "No se pudo registrar el pago";
+                respuesta = false;
+
+            }
+
+            return respuesta;
+        }*/
     }
 }

@@ -1,0 +1,135 @@
+﻿<Window x:Class="ProyectoCondominio.UI.Registros.rPagoAlquiler"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoCondominio.UI.Registros"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        TextElement.FontFamily="{materialDesign:MaterialDesignFont}"
+        Title="Registro de Pago de Alquiler" Height="575" Width="1015" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+            <StackPanel Orientation="Vertical" Margin="0,10">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Arquiler Id:"/>
+                    <Label Content="Codigo de Arquiler:" Margin="285,0,0,0"/>
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBox x:Name="IdAlquilerTextBox" Text="{Binding IdAlquiler}" Width="100" Height="25" Margin="5,0,0,0" PreviewTextInput="IdAlquilerTextBox_PreviewTextInput"/>
+                    <Button x:Name="BuscarButton"  Margin="25,0" Click="BuscarButton_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Search" Width="25" Height="25"/>
+                            <Label Content="Buscar" FontWeight="Bold" Foreground="White"/>
+                        </StackPanel>
+                    </Button>
+                    <TextBox x:Name="CodigoTextBox" Text="{Binding CodigoAlquiler}" Width="120" Height="25" Margin="100,0,0,0" IsEnabled="False"/>
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal" >
+                    <StackPanel Orientation="Vertical">
+                        <GroupBox Header="DATOS DEL INQUILINO" Margin="0,20,10,0" Width="750" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Nombre Completo:"/>
+                                    <Label Content="Tipo Documento:" Margin="220,0,0,0"/>
+                                    <Label Content="Numero Documento:" Margin="135,0,0,0"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox x:Name="NombreClienteTextBox" Text="{Binding NombreCliente}" Width="300" Height="25" Margin="5,0,0,0" IsEnabled="False"/>
+                                    <TextBox x:Name="TipoDocumentoClienteTextBox" Text="{Binding TipoDocumentoCliente}" Width="120" Height="25" Margin="45,0,0,0" IsEnabled="False"/>
+                                    <TextBox x:Name="DocumentoClienteTextBox" Text="{Binding DocumentoCliente}" Width="150" Height="25" Margin="130,0,0,0" IsEnabled="False"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal" Margin="0,5">
+                                    <Label Content="Número de Telefono/Celular:"/>
+                                    <Label Content="Correo Electronico:" Margin="158,0,0,0"/>
+                                    <Label Content="Nacionalidad:" Margin="125,0,0,0"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox x:Name="TelefonoClienteTextBox" IsEnabled="False" Text="{Binding TelefonoCliente}" Width="200" Height="25" Margin="5,0,0,0"/>
+                                    <TextBox x:Name="CorreoClienteTextBox" IsEnabled="False" Text="{Binding CorreoCliente}" Width="200" Height="25" Margin="147,0,0,0"/>
+                                    <TextBox x:Name="NacionalidadClienteTextBox" IsEnabled="False" Text="{Binding NacionalidadCliente}" Width="150" Height="25" Margin="49,0,0,0"/>
+                                </StackPanel>
+
+                            </StackPanel>
+
+
+                        </GroupBox>
+
+                        <GroupBox Header="DATOS DEL INMUEBLE" Margin="0,32,10,0" Width="750" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Vertical">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Codigo Inmueble:"/>
+                                        <Label Content="Tipo Inmueble:" Margin="30,0,0,0"/>
+                                        <Label Content="Descripcion Inmueble:" Margin="90,0,0,0"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBox x:Name="CodigoInmuebleTextBox" Width="100" Height="25" IsEnabled="False" Margin="5,0,0,0"/>
+                                        <TextBox x:Name="TipoInmuebleDescripcionTextBox" IsEnabled="False" Width="150" Height="25" Margin="30,0,0,0"/>
+                                        <TextBox x:Name="DescripcionInmuebleTextBox" Width="370" IsEnabled="False" Height="25" Margin="55,0,0,0"/>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </StackPanel>
+
+                        </GroupBox>
+
+                        <GroupBox Header="DATOS DEL ALQUILER" Margin="0,33,10,0" Width="750" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Tipo Alquiler:"/>
+                                    <Label Content="Cantidad de Periodos:" Margin="120,0,0,0"/>
+                                    <Label Content="Tipo Moneda:" Margin="100,0,0,0"/>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox x:Name="TipoAlquilerTextBox" IsEnabled="False" Width="150" Margin="5,0,0,0"/>
+                                    <TextBox x:Name="CantidadPeriodoTextBox" IsEnabled="False" Width="140" Height="25" Margin="60,0,0,0" Text="{Binding CantidadPeriodo}"/>
+                                    <TextBox x:Name="TipoMonedTextBox"  Width="150" Margin="105,0,0,0" IsEnabled="False"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical">
+                        <GroupBox Header="INFORMACION DE PAGO" Margin="0,20,10,0" Width="218">
+                            <StackPanel >
+                                <StackPanel >
+                                    <TextBox x:Name="idPeriodoTextBox" Width="25" HorizontalAlignment="Right" IsEnabled="False"/>
+                                    <Label Content="Periodo a Pagar:"/>
+                                    <TextBox x:Name="PeriodoApagarTextBox" IsEnabled="False"/>
+                                    <Label Content="Fecha Limite de Preriodo:" Margin="0,10,0,0"/>
+                                    <TextBox x:Name="FechaLimitePeriodoTextBox" IsEnabled="False"/>
+                                    <Label Content="Precio Alquiler:" Margin="0,10,0,0"/>
+                                    <TextBox x:Name="PrecioAlquilerTextBox" IsEnabled="False"/>
+
+                                    <Label Content="Importe a Pagar:" Margin="0,50,0,0"/>
+                                    <TextBox x:Name="ImporteApagarTextBox" PreviewTextInput="ImporteApagarTextBox_PreviewTextInput"/>
+
+                                    <Button x:Name="RegistrarPagoButton" Margin="0,34,0,0" Click="RegistrarPagoButton_Click" IsEnabled="False"  Height="50" Width="175" Background="Yellow" BorderBrush="Yellow">
+                                        <StackPanel Orientation="Horizontal">
+                                            <materialDesign:PackIcon Kind="Dollar"  Width="25" Height="25" Foreground="Black"/>
+                                            <Label Content="Registrar Pago" FontWeight="Bold" Foreground="Black"/>
+                                        </StackPanel>
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

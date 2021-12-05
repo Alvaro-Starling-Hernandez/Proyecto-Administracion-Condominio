@@ -62,5 +62,23 @@ namespace ProyectoCondominio
             cAlquiler cAlquiler = new cAlquiler();
             cAlquiler.ShowDialog();
         }
+
+        private void PagoAlquilerMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rPagoAlquiler rPagoA = new rPagoAlquiler();
+            rPagoA.ShowDialog();
+        }
+
+        private void cInmuebleMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cInmuebleALL cinmuebleALL = new cInmuebleALL();
+            cinmuebleALL.ShowDialog();
+        }
+
+        private void cHistorialDepagosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            HistorialDePagos historialDePagos = new HistorialDePagos();
+            historialDePagos.ShowDialog();
+        }
     }
 }

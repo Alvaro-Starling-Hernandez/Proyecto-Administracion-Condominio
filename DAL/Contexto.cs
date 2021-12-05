@@ -12,7 +12,7 @@ namespace ProyectoCondominio.DAL
     {
         public DbSet<Alquiler> Alquiler { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
-        //public DbSet<Deuda> Deuda { get; set; }
+        public DbSet<Deuda> Deuda { get; set; }
         public DbSet<Inmueble> Inmueble { get; set; }
         public DbSet<Periodo> Periodo { get; set; }
         public DbSet<TipoAlquiler> TipoAlquiler { get; set; }

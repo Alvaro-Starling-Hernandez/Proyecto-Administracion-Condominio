@@ -1,9 +1,7 @@
 ﻿using ProyectoCondominio.BLL;
 using ProyectoCondominio.Entidades;
-using ProyectoCondominio.UI.Registros;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,33 +17,20 @@ using System.Windows.Shapes;
 namespace ProyectoCondominio.UI.Consultas
 {
     /// <summary>
-    /// Interaction logic for cInmueble.xaml
+    /// Interaction logic for cInmuebleALL.xaml
     /// </summary>
-    public partial class cInmueble : Window
+    public partial class cInmuebleALL : Window
     {
         List<Inmueble> listado = new List<Inmueble>();
-        public cInmueble()
+
+        public cInmuebleALL()
         {
             InitializeComponent();
-            listado = InmuebleBLL.GetList(x => true && x.Estado == "LIBRE");
+            listado = InmuebleBLL.GetList(x => true);
             DatosDataGrid.ItemsSource = null;
             DatosDataGrid.ItemsSource = listado;
             var conteo = listado.Count;
             ConteoTextbox.Text = conteo.ToString();
-        }
-
-        private void AceptarButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (DatosDataGrid.SelectedItem != null)
-            {
-                Utilidades.inmuebleAux = (Inmueble)DatosDataGrid.SelectedItem;
-                Utilidades.InmuebleSelect = true;
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar un Inmueble", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
         }
 
         private void Buscar_Button_Click(object sender, RoutedEventArgs e)
@@ -59,7 +44,7 @@ namespace ProyectoCondominio.UI.Consultas
                     case 0:
                         try
                         {
-                            listado = InmuebleBLL.GetList(e => e.IdInmueble == Utilidades.ToInt(Criterio_TextBox.Text) && e.Estado == "LIBRE");
+                            listado = InmuebleBLL.GetList(e => e.IdInmueble == Utilidades.ToInt(Criterio_TextBox.Text));
                         }
                         catch (FormatException)
                         {
@@ -70,7 +55,7 @@ namespace ProyectoCondominio.UI.Consultas
                     case 1:
                         try
                         {
-                            listado = InmuebleBLL.GetList(d => d.Codigo.ToLower().Contains(Criterio_TextBox.Text.ToLower()) && d.Estado == "LIBRE");
+                            listado = InmuebleBLL.GetList(d => d.Codigo.ToLower().Contains(Criterio_TextBox.Text.ToLower()));
                         }
                         catch (FormatException)
                         {
@@ -81,7 +66,7 @@ namespace ProyectoCondominio.UI.Consultas
                     case 2:
                         try
                         {
-                            listado = InmuebleBLL.GetList(d => d.Direccion.ToLower().Contains(Criterio_TextBox.Text.ToLower()) && d.Estado == "LIBRE");
+                            listado = InmuebleBLL.GetList(d => d.Direccion.ToLower().Contains(Criterio_TextBox.Text.ToLower()));
                         }
                         catch (FormatException)
                         {
@@ -92,7 +77,7 @@ namespace ProyectoCondominio.UI.Consultas
                     case 3:
                         try
                         {
-                            listado = InmuebleBLL.GetList(d => d.Descripcion.ToLower().Contains(Criterio_TextBox.Text.ToLower()) && d.Estado == "LIBRE");
+                            listado = InmuebleBLL.GetList(d => d.Descripcion.ToLower().Contains(Criterio_TextBox.Text.ToLower()));
                         }
                         catch (FormatException)
                         {
@@ -103,7 +88,7 @@ namespace ProyectoCondominio.UI.Consultas
                     case 4:
                         try
                         {
-                            listado = InmuebleBLL.GetList(d => d.Estado.ToLower().Contains(Criterio_TextBox.Text.ToLower()) && d.Estado == "LIBRE");
+                            listado = InmuebleBLL.GetList(d => d.Estado.ToLower().Contains(Criterio_TextBox.Text.ToLower()));
                         }
                         catch (FormatException)
                         {
@@ -114,7 +99,7 @@ namespace ProyectoCondominio.UI.Consultas
                     case 5:
                         try
                         {
-                            listado = InmuebleBLL.GetList(d => d.PrecioAlquiler == Convert.ToSingle(Criterio_TextBox.Text) && d.Estado == "LIBRE");
+                            listado = InmuebleBLL.GetList(d => d.PrecioAlquiler == Convert.ToSingle(Criterio_TextBox.Text));
                         }
                         catch (FormatException)
                         {
@@ -126,7 +111,7 @@ namespace ProyectoCondominio.UI.Consultas
             }
             else
             {
-                listado = InmuebleBLL.GetList(x => true && x.Estado == "LIBRE");
+                listado = InmuebleBLL.GetList(x => true);
             }
 
             DatosDataGrid.ItemsSource = null;

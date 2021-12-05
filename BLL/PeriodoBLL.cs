@@ -1,4 +1,4 @@
-﻿/*using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ProyectoCondominio.DAL;
 using ProyectoCondominio.Entidades;
 using System;
@@ -169,6 +169,24 @@ namespace ProyectoCondominio.BLL
             }
             return lista;
         }
+
+        public static List<Periodo> Listar(int criterio)
+        {
+            List<Periodo> lista = new List<Periodo>();
+            Contexto contexto = new Contexto();
+            try
+            {
+                lista = contexto.Periodo.Where(x => x.IdAlquiler == criterio).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return lista;
+        }
     }
 }
-*/

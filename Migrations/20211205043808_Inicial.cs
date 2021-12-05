@@ -163,7 +163,7 @@ namespace ProyectoCondominio.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     NumeroPeriodo = table.Column<int>(type: "INTEGER", nullable: false),
                     IdAlquiler = table.Column<int>(type: "INTEGER", nullable: false),
-                    FechaLimitePeriodo = table.Column<string>(type: "TEXT", nullable: true),
+                    FechaLimitePeriodo = table.Column<DateTime>(type: "TEXT", nullable: false),
                     EstadoPeriodo = table.Column<string>(type: "TEXT", nullable: true),
                     ProximoPagar = table.Column<int>(type: "INTEGER", nullable: false),
                     Monto = table.Column<decimal>(type: "TEXT", nullable: false),
@@ -177,6 +177,29 @@ namespace ProyectoCondominio.Migrations
                         column: x => x.IdAlquiler,
                         principalTable: "Alquiler",
                         principalColumn: "IdAlquiler",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Deuda",
+                columns: table => new
+                {
+                    IdDeuda = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    IdPeriodo = table.Column<int>(type: "INTEGER", nullable: false),
+                    NumeroPeriodo = table.Column<int>(type: "INTEGER", nullable: false),
+                    MontoDeuda = table.Column<string>(type: "TEXT", nullable: true),
+                    EstadoDeuda = table.Column<string>(type: "TEXT", nullable: true),
+                    FechaPago = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Deuda", x => x.IdDeuda);
+                    table.ForeignKey(
+                        name: "FK_Deuda_Periodo_IdPeriodo",
+                        column: x => x.IdPeriodo,
+                        principalTable: "Periodo",
+                        principalColumn: "IdPeriodo",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -201,6 +224,11 @@ namespace ProyectoCondominio.Migrations
                 column: "IdTipoMoneda");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Deuda_IdPeriodo",
+                table: "Deuda",
+                column: "IdPeriodo");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Inmueble_IdTipoInmueble",
                 table: "Inmueble",
                 column: "IdTipoInmueble");
@@ -217,10 +245,13 @@ namespace ProyectoCondominio.Migrations
                 name: "Cliente");
 
             migrationBuilder.DropTable(
-                name: "Periodo");
+                name: "Deuda");
 
             migrationBuilder.DropTable(
                 name: "Vista");
+
+            migrationBuilder.DropTable(
+                name: "Periodo");
 
             migrationBuilder.DropTable(
                 name: "Alquiler");

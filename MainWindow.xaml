@@ -22,34 +22,17 @@
                     <MenuItem x:Name="TipoAlquilerMenuItem" Header="Registro de Tipo de Arquiler" Click="TipoAlquilerMenuItem_Click"/>
                     <MenuItem x:Name="InmuebleMenuItem" Header="Registro de Inmueble" Click="InmuebleMenuItem_Click"/>
                     <MenuItem x:Name="AlquilerMenuItem" Header="Registro de Alquiler" Click="AlquilerMenuItem_Click"/>
-                    <MenuItem x:Name="PermisoMenuItem" Header="Registro de Permisos"/>
-                    <MenuItem x:Name="DepartamentosMenuItem" Header="Registro de Departamentos"/>
-                    <MenuItem x:Name="HabilidadesMenuItem" Header="Registro de Habilidades"/>
-                    <MenuItem x:Name="RolesMenuItem" Header="Registro de Roles" />
+                    <MenuItem x:Name="PagoAlquilerMenuItem" Header="Registro de Pago de Alquiler" Click="PagoAlquilerMenuItem_Click"/>
+                    
 
-                    <MenuItem Header="Registros de Direcciones">
-                        <MenuItem x:Name="ProvinciaMenuItem" Header="Registro de Provincias" />
-                        <MenuItem x:Name="CiudadesMenuItem" Header="Registro de Ciudades" />
-                        <MenuItem x:Name="SectoresMenuItem" Header="Registro de Sectores" />
-                    </MenuItem>
+                    
                 </MenuItem>
 
                 <MenuItem Header="Consultas">
                     <MenuItem x:Name="cAlquilerMenuItem" Header="Consulta de Alquiler" Click="cAlquilerMenuItem_Click"/>
-                    <MenuItem x:Name="cUsuariosMenuItem" Header="Consulta de Usuarios" />
-                    <MenuItem x:Name="cPersonasMenuItem" Header="Consulta de Personas"/>
-                    <MenuItem x:Name="cGenerosMenuItem" Header="Consulta de Generos" />
-                    <MenuItem x:Name="cEmpresasMenuItem" Header="Consulta de Empresas"/>
-                    <MenuItem x:Name="cPermisoMenuItem" Header="Consulta de Permiso" />
-                    <MenuItem x:Name="cRolesMenuItem" Header="Consulta de Roles"/>
-                    <MenuItem x:Name="cDepartamentosMenuItem" Header="Consulta de Departamentos" />
-                    <MenuItem x:Name="cHabilidadesMenuItem" Header="Consulta de Habilidades"/>
+                    <MenuItem x:Name="cInmuebleMenuItem" Header="Consulta de Inmuebles" Click="cInmuebleMenuItem_Click"/>
+                    <MenuItem x:Name="cHistorialDepagosMenuItem" Header="Historial de Pagos" Click="cHistorialDepagosMenuItem_Click"/>
 
-                    <MenuItem Header="Consultas de Direcciones">
-                        <MenuItem x:Name="cProvinciaMenuItem" Header="Consulta de Provincias" />
-                        <MenuItem x:Name="cCiudadesMenuItem" Header="Consulta de Ciudades" />
-                        <MenuItem x:Name="cSectoresMenuItem" Header="Consulta de Sectores" />
-                    </MenuItem>
                 </MenuItem>
 
                 <MenuItem Header="Opciones">

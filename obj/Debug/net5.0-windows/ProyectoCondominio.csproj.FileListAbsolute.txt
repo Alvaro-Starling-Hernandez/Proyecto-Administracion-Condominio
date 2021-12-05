@@ -77,6 +77,12 @@ C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Registros\rArquiler.baml
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Consultas\cInmueble.g.cs
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Consultas\cInmueble.baml
-C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\bin\Debug\net5.0-windows\DATA\DBDATOS.db
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Consultas\cAlquiler.g.cs
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Consultas\cAlquiler.baml
+C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Registros\rPagoAlquiler.g.cs
+C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Registros\rPagoAlquiler.baml
+C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\bin\Debug\net5.0-windows\DATA\DBDATOS.db
+C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Consultas\cInmuebleALL.g.cs
+C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Consultas\cInmuebleALL.baml
+C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Consultas\HistorialDePagos.g.cs
+C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Consultas\HistorialDePagos.baml

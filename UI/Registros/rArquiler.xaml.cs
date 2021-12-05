@@ -1,4 +1,5 @@
 ﻿using ProyectoCondominio.BLL;
+using ProyectoCondominio.DAL;
 using ProyectoCondominio.Entidades;
 using ProyectoCondominio.UI.Consultas;
 using System;
@@ -125,13 +126,13 @@ namespace ProyectoCondominio.UI.Registros
                 NacionalidadClienteTextBox.Focus();
             }
 
-           /* if (CodigoInmuebleTextBox.Text.Length == 0)
+           if (CodigoInmuebleTextBox.Text.Length == 0)
             {
                 esValido = false;
 
-                MessageBox.Show("El campo Codigo Inmueble está vacio", "Fallo",
+                MessageBox.Show("Debe buscar un Inmueble Para llenar los siguientes campos:\nCodigo Inmueble\nTipo Inmueble\nDescripcion Inmueble\nPrecio Alquiler", "Fallo",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
-            }*/
+            }
 
             if (CantidadPeriodoTextBox.Text.Length == 0)
             {
@@ -141,33 +142,6 @@ namespace ProyectoCondominio.UI.Registros
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 TelefonoClienteTextBox.Focus();
             }
-            /* if (PrecioAlquilerTextBox.Text.Length == 0 || Convert.ToSingle(PrecioAlquilerTextBox.Text) <= 0)
-             {
-                 esValido = false;
-
-                 if (Convert.ToSingle(PrecioAlquilerTextBox.Text) < 0)
-                 {
-                     MessageBox.Show("El Precio Alquiler no puede ser menor que 0", "Fallo",
-                     MessageBoxButton.OK, MessageBoxImage.Warning);
-                     return false;
-                 }
-                 MessageBox.Show("El campo Precio Alquiler está vacio", "Fallo",
-                     MessageBoxButton.OK, MessageBoxImage.Warning);
-                 PrecioAlquilerTextBox.Focus();
-             }*/
-
-            /*if (InmuebleBLL.ExisteCodigo(CodigoTextBox.Text) == true)
-            {
-                if (InmuebleBLL.Existe(Utilidades.ToInt(IdInmuebleTextBox.Text)) == true)
-                {
-                    return true;
-                }
-                esValido = false;
-
-                MessageBox.Show("Ya existe un Inmueble con este Codigo!", "Fallo",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
-                CodigoTextBox.Focus();
-            }*/
 
             return esValido;
         }
@@ -187,10 +161,23 @@ namespace ProyectoCondominio.UI.Registros
                 TipoInmuebleDescripcionTextBox.Text = "";//
                 DescripcionInmuebleTextBox.Text = "";//
                 PrecioAlquilerTextBox.Text = "";
+                CodigoTextBox.IsEnabled = true;
+                BuscarIInmueble.IsEnabled = true;
+                TipoAlquilerCombobox.IsEnabled = true;
+                CantidadPeriodoTextBox.IsEnabled = true;
+                TipoMonedaCombobox.IsEnabled = true;
+                FechaInicioAlquilerDatePicker.IsEnabled = true;
             }
 
             if (tipo != null)
             {
+                CodigoTextBox.IsEnabled = false;
+                BuscarIInmueble.IsEnabled = false;
+                TipoAlquilerCombobox.IsEnabled = false;
+                CantidadPeriodoTextBox.IsEnabled = false;
+                TipoMonedaCombobox.IsEnabled = false;
+                FechaInicioAlquilerDatePicker.IsEnabled = false;
+
                 var Tipo = InmuebleBLL.Buscar(alquiler.IdInmueble);
                 var TipoInmueble = TipoInmuebleBLL.Buscar(Tipo.IdTipoInmueble);
                 CodigoInmuebleTextBox.Text = Tipo.Codigo;
@@ -206,42 +193,79 @@ namespace ProyectoCondominio.UI.Registros
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
+            CodigoTextBox.IsEnabled = true;
+            BuscarIInmueble.IsEnabled = true;
+            TipoAlquilerCombobox.IsEnabled = true;
+            CantidadPeriodoTextBox.IsEnabled = true;
+            TipoMonedaCombobox.IsEnabled = true;
+            FechaInicioAlquilerDatePicker.IsEnabled = true;
         }
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
+            Contexto contexto = new Contexto();
+            bool paso = false;
+            bool paso2 = false;
+
             if (!Validar())
                 return;
-
-            alquiler.FechaInicioAlquiler = Convert.ToDateTime(FechaInicioAlquilerDatePicker.Text);
-            alquiler.CantidadPeriodo = Convert.ToInt32(CantidadPeriodoTextBox.Text);
-
-
-            DateTime fechafinperiodo = alquiler.FechaInicioAlquiler;
-            List<Periodo> listaPeriodos = new List<Periodo>();
-            var tipoAlquiler = TipoAlquilerBLL.Buscar(alquiler.IdTipoAlquiler);
             
-            int dias = alquiler.CantidadPeriodo * tipoAlquiler.Dias;
-            fechafinperiodo = fechafinperiodo.AddDays(dias);
-            for (int i = 1; i <= alquiler.CantidadPeriodo; i++)
+            if(CantidadPeriodoTextBox.IsEnabled == true)
             {
-                listaPeriodos.Add(new Periodo()
+                alquiler.FechaInicioAlquiler = Convert.ToDateTime(FechaInicioAlquilerDatePicker.Text);
+                alquiler.CantidadPeriodo = Convert.ToInt32(CantidadPeriodoTextBox.Text);
+                DateTime fechafinperiodo = alquiler.FechaInicioAlquiler;
+                List<Periodo> listaPeriodos = new List<Periodo>();
+
+                var tipoAlquiler = TipoAlquilerBLL.Buscar(alquiler.IdTipoAlquiler);
+                int dias = alquiler.CantidadPeriodo * tipoAlquiler.Dias;
+
+
+
+                for (int i = 1; i <= alquiler.CantidadPeriodo; i++)
                 {
-                    NumeroPeriodo = i,
-                    FechaLimitePeriodo = fechafinperiodo,
-                    EstadoPeriodo = "PENDIENTE",
-                    ProximoPagar = i == 1 ? 1 : 0
-                });
+                    fechafinperiodo = fechafinperiodo.AddDays((dias / alquiler.CantidadPeriodo));
+                    listaPeriodos.Add(new Periodo()
+                    {
+                        NumeroPeriodo = i,
+                        FechaLimitePeriodo = fechafinperiodo,
+                        EstadoPeriodo = "PENDIENTE",
+                        ProximoPagar = i == 1 ? 1 : 0
+                    });
+                }
+
+                alquiler.FechaFinAlquiler = fechafinperiodo;
+
+                paso = AlquilerBLL.Guardar(alquiler);
+
+                foreach (Periodo p in listaPeriodos)
+                {
+                    p.IdAlquiler = alquiler.IdAlquiler;
+                    paso2 = PeriodoBLL.Guardar(p);
+                }
+
+                var Tipo = InmuebleBLL.Buscar(alquiler.IdInmueble);
+                Tipo.Estado = "OCUPADO";
+
+                InmuebleBLL.Guardar(Tipo);
             }
-            
-            alquiler.FechaFinAlquiler = fechafinperiodo;
-            var paso = AlquilerBLL.Guardar(alquiler);
+
+            if (CantidadPeriodoTextBox.IsEnabled == false)
+            {
+                paso = AlquilerBLL.Guardar(alquiler);          
+            }
 
             if (paso)
             {
                 Limpiar();
                 MessageBox.Show("Transaccion exitosa!", "Exito",
                     MessageBoxButton.OK, MessageBoxImage.Information);
+                CodigoTextBox.IsEnabled = true;
+                BuscarIInmueble.IsEnabled = true;
+                TipoAlquilerCombobox.IsEnabled = true;
+                CantidadPeriodoTextBox.IsEnabled = true;
+                TipoMonedaCombobox.IsEnabled = true;
+                FechaInicioAlquilerDatePicker.IsEnabled = true;
             }
             else
                 MessageBox.Show("Transaccion Fallida!", "Fallo",
@@ -255,6 +279,12 @@ namespace ProyectoCondominio.UI.Registros
                 Limpiar();
                 MessageBox.Show("Registro eliminado!", "Exito",
                     MessageBoxButton.OK, MessageBoxImage.Information);
+                CodigoTextBox.IsEnabled = true;
+                BuscarIInmueble.IsEnabled = true;
+                TipoAlquilerCombobox.IsEnabled = true;
+                CantidadPeriodoTextBox.IsEnabled = true;
+                TipoMonedaCombobox.IsEnabled = true;
+                FechaInicioAlquilerDatePicker.IsEnabled = true;
             }
             else
                 MessageBox.Show("No fue posible eliminar", "Fallo",

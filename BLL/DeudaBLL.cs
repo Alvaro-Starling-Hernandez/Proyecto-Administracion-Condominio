@@ -1,4 +1,4 @@
-﻿/*using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using ProyectoCondominio.DAL;
 using ProyectoCondominio.Entidades;
 using System;
@@ -172,4 +172,3 @@ namespace ProyectoCondominio.BLL
         }
     }
 }
-*/

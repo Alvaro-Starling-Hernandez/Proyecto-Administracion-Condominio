@@ -9,7 +9,7 @@ using ProyectoCondominio.DAL;
 namespace ProyectoCondominio.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20211201174114_Inicial")]
+    [Migration("20211205043808_Inicial")]
     partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -121,6 +121,34 @@ namespace ProyectoCondominio.Migrations
                         });
                 });
 
+            modelBuilder.Entity("ProyectoCondominio.Entidades.Deuda", b =>
+                {
+                    b.Property<int>("IdDeuda")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("EstadoDeuda")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("FechaPago")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("IdPeriodo")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("MontoDeuda")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("NumeroPeriodo")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("IdDeuda");
+
+                    b.HasIndex("IdPeriodo");
+
+                    b.ToTable("Deuda");
+                });
+
             modelBuilder.Entity("ProyectoCondominio.Entidades.Inmueble", b =>
                 {
                     b.Property<int>("IdInmueble")
@@ -161,7 +189,7 @@ namespace ProyectoCondominio.Migrations
                     b.Property<string>("EstadoPeriodo")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FechaLimitePeriodo")
+                    b.Property<DateTime>("FechaLimitePeriodo")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FechaPago")
@@ -294,6 +322,17 @@ namespace ProyectoCondominio.Migrations
                     b.Navigation("TipoAlquiler");
 
                     b.Navigation("TipoMoneda");
+                });
+
+            modelBuilder.Entity("ProyectoCondominio.Entidades.Deuda", b =>
+                {
+                    b.HasOne("ProyectoCondominio.Entidades.Periodo", "Periodo")
+                        .WithMany()
+                        .HasForeignKey("IdPeriodo")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Periodo");
                 });
 
             modelBuilder.Entity("ProyectoCondominio.Entidades.Inmueble", b =>

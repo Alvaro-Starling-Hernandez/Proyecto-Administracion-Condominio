@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\App.xaml
-81930944760
+1162930621
 1-1378801019
-36934211427
+42-739657921
 216788107649
-MainWindow.xaml;UI\Consultas\cAlquiler.xaml;UI\Consultas\cInmueble.xaml;UI\Registros\rArquiler.xaml;UI\Registros\rInmueble.xaml;UI\Registros\rTipoAlquiler.xaml;UI\Registros\rTipoInmueble.xaml;UI\Registros\rTipoMoneda.xaml;
+MainWindow.xaml;UI\Consultas\cAlquiler.xaml;UI\Consultas\cInmueble.xaml;UI\Consultas\cInmuebleALL.xaml;UI\Consultas\HistorialDePagos.xaml;UI\Registros\rArquiler.xaml;UI\Registros\rInmueble.xaml;UI\Registros\rPagoAlquiler.xaml;UI\Registros\rTipoAlquiler.xaml;UI\Registros\rTipoInmueble.xaml;UI\Registros\rTipoMoneda.xaml;
 
-False
+True
 

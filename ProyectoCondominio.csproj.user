@@ -13,10 +13,19 @@
     <Compile Update="UI\Consultas\cInmueble.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\Consultas\cInmuebleALL.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\Consultas\HistorialDePagos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\Registros\rArquiler.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UI\Registros\rInmueble.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\Registros\rPagoAlquiler.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UI\Registros\rTipoAlquiler.xaml.cs">
@@ -39,10 +48,19 @@
     <Page Update="UI\Consultas\cInmueble.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UI\Consultas\cInmuebleALL.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Consultas\HistorialDePagos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UI\Registros\rArquiler.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Registros\rInmueble.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Registros\rPagoAlquiler.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Registros\rTipoAlquiler.xaml">
