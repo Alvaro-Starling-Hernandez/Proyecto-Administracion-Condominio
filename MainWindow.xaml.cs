@@ -86,5 +86,11 @@ namespace ProyectoCondominio
             ResumenDeArquiler resumenDeArquiler = new ResumenDeArquiler();
             resumenDeArquiler.Show();
         }
+
+        private void cPagoDeudaMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            cPagoDeDeuda cPagoDeDeudaObj = new cPagoDeDeuda();
+            cPagoDeDeudaObj.Show();
+        }
     }
 }

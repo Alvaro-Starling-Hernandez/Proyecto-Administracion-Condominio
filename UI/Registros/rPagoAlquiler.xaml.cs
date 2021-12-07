@@ -152,6 +152,8 @@ namespace ProyectoCondominio.UI.Registros
                 deuda.IdPeriodo = periodo.IdPeriodo;
                 deuda.MontoDeuda = _montodeuda.ToString("0.00");
                 deuda.EstadoDeuda = "PENDIENTE";
+                deuda.NumeroPeriodo = periodo.NumeroPeriodo;
+                deuda.FechaPago = "NO PAGO";
 
                 paso = DeudaBLL.Guardar(deuda);
 

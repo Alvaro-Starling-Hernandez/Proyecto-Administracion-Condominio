@@ -1,4 +1,4 @@
-﻿<Window x:Class="ProyectoCondominio.UI.Consultas.cInmuebleALL"
+﻿<Window x:Class="ProyectoCondominio.UI.Consultas.cPagoDeDeuda"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -11,35 +11,17 @@
         TextElement.FontWeight="Regular"
         TextElement.FontSize="14"
         TextElement.FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="Consulta de Inmuebles" Height="600" Width="850" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Consulta de Deudas" Height="600" Width="850" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10">
 
             <GroupBox>
                 <StackPanel Orientation="Horizontal">
-                    <StackPanel Orientation="Vertical">
 
-
-                        <StackPanel HorizontalAlignment="Left">
-                            <Label Content="Filtro:"/>
-                            <ComboBox x:Name="Filtro_ComboBox" Width="150" Margin="0,0,0,5">
-                                <ComboBoxItem Content="Id"/>
-                                <ComboBoxItem Content="Codigo"/>
-                                <ComboBoxItem Content="Direccion"/>
-                                <ComboBoxItem Content="Descripcion"/>
-                                <ComboBoxItem Content="Estado"/>
-                                <ComboBoxItem Content="Precio"/>
-                            </ComboBox>
-
-                        </StackPanel>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="45,0,0,0">
-
-
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
 
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
-                            <Label Content="Critero:"/>
+                            <Label Content="Id del Arquiler:"/>
                             <TextBox x:Name="Criterio_TextBox" Width="200" />
                         </StackPanel>
                     </StackPanel>
@@ -58,13 +40,34 @@
             <StackPanel HorizontalAlignment="Left" Margin="0,10,0,0">
                 <DataGrid x:Name="DatosDataGrid" Height="350" AutoGenerateColumns="False" IsReadOnly="True" GridLinesVisibility="All">
                     <DataGrid.Columns>
-                        <DataGridTextColumn x:Name="C1" Header="Id" Binding="{Binding IdInmueble}" />
-                        <DataGridTextColumn x:Name="C2" Header="Codigo" Binding="{Binding Codigo}" />
-                        <DataGridTextColumn x:Name="C3" Header="Tipo Inmueble" Binding="{Binding IdTipoInmueble}" />
-                        <DataGridTextColumn x:Name="C4" Header="Direccion" Binding="{Binding Direccion}" />
-                        <DataGridTextColumn x:Name="C5" Header="Descripcion" Binding="{Binding Descripcion}" />
-                        <DataGridTextColumn x:Name="C6" Header="Estado" Binding="{Binding Estado}"/>
-                        <DataGridTextColumn x:Name="C7" Header="Precio Alquiler" Binding="{Binding PrecioAlquiler}"/>
+                        <DataGridTextColumn x:Name="C1" Header="Id" Binding="{Binding IdDeuda}"/>
+                        <DataGridTextColumn x:Name="C2" Header="Id Periodo" Binding="{Binding IdPeriodo}"/>
+                        <DataGridTextColumn x:Name="C3" Header="Numero de periodo" Binding="{Binding NumeroPeriodo}"/>
+                        <DataGridTextColumn x:Name="C4" Header="Monto" Binding="{Binding MontoDeuda}"/>
+                        <DataGridTextColumn x:Name="C5" Header="Estado" Binding="{Binding EstadoDeuda}"/>
+                        <DataGridTextColumn x:Name="C7" Header="Fecha de pago" Binding="{Binding FechaPago}" />
+
+                        <DataGridTemplateColumn Width="100" Header="Pagar">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="PagarButton" Width="55" Background="Yellow" BorderBrush="Yellow" >
+                                        <materialDesign:PackIcon Kind="Dollar" Foreground="Black" Width="25" Height="25" HorizontalAlignment="Center"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Width="100" Header="Descargar">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="DescargarButtom" Width="55">
+                                        <materialDesign:PackIcon Kind="Download" Width="25" Height="25" HorizontalAlignment="Center"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

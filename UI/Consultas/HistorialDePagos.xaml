@@ -11,7 +11,7 @@
         TextElement.FontWeight="Regular"
         TextElement.FontSize="14"
         TextElement.FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="Historial de Pagos" Height="600" Width="740" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Historial de Pagos" Height="600" Width="850" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10">
 
@@ -38,15 +38,27 @@
             </GroupBox>
 
             <StackPanel HorizontalAlignment="Left" Margin="0,10,0,0">
-                <DataGrid x:Name="DatosDataGrid" Height="350" Width="720" AutoGenerateColumns="False" IsReadOnly="True" GridLinesVisibility="All">
+                <DataGrid x:Name="DatosDataGrid" Height="350" AutoGenerateColumns="False" IsReadOnly="True" GridLinesVisibility="All">
                     <DataGrid.Columns>
-                        <DataGridTextColumn x:Name="C1" Header="Id" Binding="{Binding IdPeriodo}" Width="100"/>
-                        <DataGridTextColumn x:Name="C2" Header="Numero" Binding="{Binding NumeroPeriodo}" Width="100"/>
-                        <DataGridTextColumn x:Name="C3" Header="Id Alquiler" Binding="{Binding IdAlquiler}" Width="117"/>
-                        <DataGridTextColumn x:Name="C4" Header="Fecha Limite" Binding="{Binding FechaLimitePeriodo}" Width="150"/>
-                        <DataGridTextColumn x:Name="C5" Header="Estado" Binding="{Binding EstadoPeriodo}" Width=""/>
-                        <DataGridTextColumn x:Name="C6" Header="Monto" Binding="{Binding Monto}" Width="75"/>
-                        <DataGridTextColumn x:Name="C7" Header="Fecha" Binding="{Binding FechaPago}" Width="150"/>
+                        <DataGridTextColumn x:Name="C1" Header="Id" Binding="{Binding IdPeriodo}"/>
+                        <DataGridTextColumn x:Name="C2" Header="Numero" Binding="{Binding NumeroPeriodo}"/>
+                        <DataGridTextColumn x:Name="C3" Header="Id Alquiler" Binding="{Binding IdAlquiler}"/>
+                        <DataGridTextColumn x:Name="C4" Header="Fecha Limite" Binding="{Binding FechaLimitePeriodo}"/>
+                        <DataGridTextColumn x:Name="C5" Header="Estado" Binding="{Binding EstadoPeriodo}"/>
+                        <DataGridTextColumn x:Name="C6" Header="Monto" Binding="{Binding Monto}" />
+                        <DataGridTextColumn x:Name="C7" Header="Fecha" Binding="{Binding FechaPago}" />
+
+                        <DataGridTemplateColumn Width="100" Header="Descargar">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="DescargarButtom" Width="55">
+                                        <materialDesign:PackIcon Kind="Download" Width="25" Height="25" HorizontalAlignment="Center"/>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

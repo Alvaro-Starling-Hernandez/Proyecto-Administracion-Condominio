@@ -16,6 +16,9 @@
     <Compile Update="UI\Consultas\cInmuebleALL.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\Consultas\cPagoDeDeuda.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\Consultas\HistorialDePagos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Consultas\cInmuebleALL.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Consultas\cPagoDeDeuda.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Consultas\HistorialDePagos.xaml">

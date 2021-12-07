@@ -32,6 +32,7 @@
                     <MenuItem x:Name="cAlquilerMenuItem" Header="Consulta de Alquiler" Click="cAlquilerMenuItem_Click"/>
                     <MenuItem x:Name="cInmuebleMenuItem" Header="Consulta de Inmuebles" Click="cInmuebleMenuItem_Click"/>
                     <MenuItem x:Name="cHistorialDepagosMenuItem" Header="Historial de Pagos" Click="cHistorialDepagosMenuItem_Click"/>
+                    <MenuItem x:Name="cPagoDeudaMenuItem" Header="Consulta de Deudas" Click="cPagoDeudaMenuItem_Click"/>
 
                 </MenuItem>
 

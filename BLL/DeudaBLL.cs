@@ -113,6 +113,27 @@ namespace ProyectoCondominio.BLL
             return deuda;
         }
 
+        public static Deuda BuscarPorPeriodo(Expression<Func<Deuda, bool>> criterio)
+        {
+            List<Deuda> lista = new List<Deuda>();
+            Deuda deuda;
+            Contexto contexto = new Contexto();
+            try
+            {
+                lista = contexto.Deuda.Where(criterio).ToList();
+                deuda = lista.FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return deuda;
+        }
+
         public static List<Deuda> GetList(Expression<Func<Deuda, bool>> criterio)
         {
             List<Deuda> lista = new List<Deuda>();
