@@ -86,3 +86,5 @@ C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Consultas\cInmuebleALL.baml
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Consultas\HistorialDePagos.g.cs
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Consultas\HistorialDePagos.baml
+C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Registros\ResumenDeArquiler.g.cs
+C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Registros\ResumenDeArquiler.baml

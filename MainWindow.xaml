@@ -35,6 +35,8 @@
 
                 </MenuItem>
 
+                <MenuItem x:Name="ResumenMenuItem" Header="Resumen de Alquiler" Click="ResumenMenuItem_Click"/>
+
                 <MenuItem Header="Opciones">
                     <MenuItem x:Name="CambiarContrasenaMenuItem" Header="Cambiar Contraseña" />
                 </MenuItem>

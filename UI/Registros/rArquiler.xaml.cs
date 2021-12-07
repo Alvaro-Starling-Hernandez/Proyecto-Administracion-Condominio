@@ -228,7 +228,7 @@ namespace ProyectoCondominio.UI.Registros
                     listaPeriodos.Add(new Periodo()
                     {
                         NumeroPeriodo = i,
-                        FechaLimitePeriodo = fechafinperiodo,
+                        FechaLimitePeriodo = fechafinperiodo.ToString("dd-MM-yyyy", new CultureInfo("en-US")),
                         EstadoPeriodo = "PENDIENTE",
                         ProximoPagar = i == 1 ? 1 : 0
                     });

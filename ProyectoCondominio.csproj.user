@@ -22,6 +22,9 @@
     <Compile Update="UI\Registros\rArquiler.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\Registros\ResumenDeArquiler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\Registros\rInmueble.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Registros\rArquiler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Registros\ResumenDeArquiler.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Registros\rInmueble.xaml">

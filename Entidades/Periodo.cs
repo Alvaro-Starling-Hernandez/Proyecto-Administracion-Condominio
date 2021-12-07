@@ -14,7 +14,7 @@ namespace ProyectoCondominio.Entidades
         public int IdPeriodo { get; set; }
         public int NumeroPeriodo { get; set; }
         public int IdAlquiler { get; set; }
-        public DateTime FechaLimitePeriodo { get; set; }
+        public string FechaLimitePeriodo { get; set; }
         public string EstadoPeriodo { get; set; }
         public int ProximoPagar { get; set; }
         public decimal Monto { get; set; }

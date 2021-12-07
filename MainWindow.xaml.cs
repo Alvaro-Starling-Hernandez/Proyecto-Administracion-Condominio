@@ -30,55 +30,61 @@ namespace ProyectoCondominio
         private void TipoMonedaMenuItem_Click(object sender, RoutedEventArgs e)
         {
             rTipoMoneda RtipoMoneda = new rTipoMoneda();
-            RtipoMoneda.ShowDialog();
+            RtipoMoneda.Show();
         }
 
         private void TipoInmuebleMenuItem_Click(object sender, RoutedEventArgs e)
         {
             rTipoInmueble RtipoInmueble = new rTipoInmueble();
-            RtipoInmueble.ShowDialog();
+            RtipoInmueble.Show();
         }
 
         private void TipoAlquilerMenuItem_Click(object sender, RoutedEventArgs e)
         {
             rTipoAlquiler RtipoArquiler = new rTipoAlquiler();
-            RtipoArquiler.ShowDialog();
+            RtipoArquiler.Show();
         }
 
         private void InmuebleMenuItem_Click(object sender, RoutedEventArgs e)
         {
             rInmueble Rinmueble = new rInmueble();
-            Rinmueble.ShowDialog();
+            Rinmueble.Show();
         }
 
         private void AlquilerMenuItem_Click(object sender, RoutedEventArgs e)
         {
             rArquiler Ralquiler = new rArquiler();
-            Ralquiler.ShowDialog();
+            Ralquiler.Show();
         }
 
         private void cAlquilerMenuItem_Click(object sender, RoutedEventArgs e)
         {
             cAlquiler cAlquiler = new cAlquiler();
-            cAlquiler.ShowDialog();
+            cAlquiler.Show();
         }
 
         private void PagoAlquilerMenuItem_Click(object sender, RoutedEventArgs e)
         {
             rPagoAlquiler rPagoA = new rPagoAlquiler();
-            rPagoA.ShowDialog();
+            rPagoA.Show();
         }
 
         private void cInmuebleMenuItem_Click(object sender, RoutedEventArgs e)
         {
             cInmuebleALL cinmuebleALL = new cInmuebleALL();
-            cinmuebleALL.ShowDialog();
+            cinmuebleALL.Show();
         }
 
         private void cHistorialDepagosMenuItem_Click(object sender, RoutedEventArgs e)
         {
             HistorialDePagos historialDePagos = new HistorialDePagos();
-            historialDePagos.ShowDialog();
+            historialDePagos.Show();
+        }
+
+        private void ResumenMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            ResumenDeArquiler resumenDeArquiler = new ResumenDeArquiler();
+            resumenDeArquiler.Show();
         }
     }
 }

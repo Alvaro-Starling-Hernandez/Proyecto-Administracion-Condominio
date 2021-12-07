@@ -83,7 +83,7 @@ namespace ProyectoCondominio.UI.Registros
                         {
                             idPeriodoTextBox.Text = p.IdPeriodo.ToString();
                             PeriodoApagarTextBox.Text = p.NumeroPeriodo.ToString();
-                            FechaLimitePeriodoTextBox.Text = p.FechaLimitePeriodo.ToString("dd-MM-yyyy", new CultureInfo("en-US"));
+                            FechaLimitePeriodoTextBox.Text = p.FechaLimitePeriodo;
                         }
 
                     }
@@ -134,7 +134,7 @@ namespace ProyectoCondominio.UI.Registros
 
             var periodo = PeriodoBLL.Buscar(Utilidades.ToInt(idPeriodoTextBox.Text));
             periodo.Monto = Convert.ToDecimal(ImporteApagarTextBox.Text);
-            periodo.FechaPago = DateTime.Now.ToString("yyyy-MM-dd", new CultureInfo("en-US"));
+            periodo.FechaPago = DateTime.Now.ToString("dd-MM-yyyy", new CultureInfo("en-US"));
 
             _montodeuda = decimal.Parse(PrecioAlquilerTextBox.Text) - _importepagar;
 
