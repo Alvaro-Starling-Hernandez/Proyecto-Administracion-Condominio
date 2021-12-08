@@ -23,6 +23,7 @@
                     <MenuItem x:Name="InmuebleMenuItem" Header="Registro de Inmueble" Click="InmuebleMenuItem_Click"/>
                     <MenuItem x:Name="AlquilerMenuItem" Header="Registro de Alquiler" Click="AlquilerMenuItem_Click"/>
                     <MenuItem x:Name="PagoAlquilerMenuItem" Header="Registro de Pago de Alquiler" Click="PagoAlquilerMenuItem_Click"/>
+                    <MenuItem x:Name="MoraMenuItem" Header="Registro de Mora" Click="MoraMenuItem_Click"/>
                     
 
                     

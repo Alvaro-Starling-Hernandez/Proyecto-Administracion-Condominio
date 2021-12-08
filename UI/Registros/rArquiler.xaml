@@ -105,11 +105,14 @@
                         <StackPanel Orientation="Horizontal" Margin="0,5">
                             <Label Content="Precio Alquiler:"/>
                             <Label Content="Fecha de Inicio Alquiler:" Margin="110,0,0,0"/>
+                            <Label Content="% Mora" Margin="85,0,0,0"/>
+                            
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal">
                             <TextBox x:Name="PrecioAlquilerTextBox" Width="100" Height="25" IsEnabled="False" Margin="5,0,0,0"/>
                             <DatePicker x:Name="FechaInicioAlquilerDatePicker" SelectedDate="{Binding FechaInicioAlquiler}" SelectedDateFormat="Short" Width="150" Height="23" Margin="112,0,0,0"/>
+                            <ComboBox x:Name="MoraCombobox" SelectedValue="{Binding MoraId}" Width="150" Margin="93,0,0,0"/>
                         </StackPanel>
 
                     </StackPanel>

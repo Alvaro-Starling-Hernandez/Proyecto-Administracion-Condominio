@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ProyectoCondominio.Migrations
 {
-    public partial class inicial : Migration
+    public partial class Inicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -24,6 +24,19 @@ namespace ProyectoCondominio.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Cliente", x => x.IdCliente);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Mora",
+                columns: table => new
+                {
+                    MoraId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Porciento = table.Column<float>(type: "REAL", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Mora", x => x.MoraId);
                 });
 
             migrationBuilder.CreateTable(
@@ -126,6 +139,7 @@ namespace ProyectoCondominio.Migrations
                     IdTipoAlquiler = table.Column<int>(type: "INTEGER", nullable: false),
                     IdTipoMoneda = table.Column<int>(type: "INTEGER", nullable: false),
                     CantidadPeriodo = table.Column<int>(type: "INTEGER", nullable: false),
+                    MoraId = table.Column<int>(type: "INTEGER", nullable: false),
                     FechaInicioAlquiler = table.Column<DateTime>(type: "TEXT", nullable: false),
                     FechaFinAlquiler = table.Column<DateTime>(type: "TEXT", nullable: false),
                     FechaRegistro = table.Column<DateTime>(type: "TEXT", nullable: false),
@@ -139,6 +153,12 @@ namespace ProyectoCondominio.Migrations
                         column: x => x.IdInmueble,
                         principalTable: "Inmueble",
                         principalColumn: "IdInmueble",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Alquiler_Mora_MoraId",
+                        column: x => x.MoraId,
+                        principalTable: "Mora",
+                        principalColumn: "MoraId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Alquiler_TipoAlquiler_IdTipoAlquiler",
@@ -243,6 +263,11 @@ namespace ProyectoCondominio.Migrations
                 column: "IdTipoMoneda");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Alquiler_MoraId",
+                table: "Alquiler",
+                column: "MoraId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Deuda_IdPeriodo",
                 table: "Deuda",
                 column: "IdPeriodo");
@@ -277,6 +302,9 @@ namespace ProyectoCondominio.Migrations
 
             migrationBuilder.DropTable(
                 name: "Inmueble");
+
+            migrationBuilder.DropTable(
+                name: "Mora");
 
             migrationBuilder.DropTable(
                 name: "TipoAlquiler");

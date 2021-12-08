@@ -105,5 +105,11 @@ namespace ProyectoCondominio
             this.Close();
             login.Show();
         }
+
+        private void MoraMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rMoras Rmoras = new rMoras();
+            Rmoras.Show();
+        }
     }
 }

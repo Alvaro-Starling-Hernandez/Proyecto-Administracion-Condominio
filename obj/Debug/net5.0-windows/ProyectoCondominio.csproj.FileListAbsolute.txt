@@ -97,7 +97,6 @@ C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\Login.g.cs
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\Login.baml
 C:\Users\Encargado\Desktop\Alvaro\bin\Debug\net5.0-windows\Resources\Icono.ico
-C:\Users\Encargado\Desktop\Alvaro\bin\Debug\net5.0-windows\DATA\DBDATOS.db
 C:\Users\Encargado\Desktop\Alvaro\bin\Debug\net5.0-windows\ProyectoCondominio.exe
 C:\Users\Encargado\Desktop\Alvaro\bin\Debug\net5.0-windows\ProyectoCondominio.deps.json
 C:\Users\Encargado\Desktop\Alvaro\bin\Debug\net5.0-windows\ProyectoCondominio.runtimeconfig.json
@@ -194,3 +193,6 @@ C:\Users\Encargado\Desktop\Alvaro\obj\Debug\net5.0-windows\ProyectoCondominio.dl
 C:\Users\Encargado\Desktop\Alvaro\obj\Debug\net5.0-windows\ref\ProyectoCondominio.dll
 C:\Users\Encargado\Desktop\Alvaro\obj\Debug\net5.0-windows\ProyectoCondominio.pdb
 C:\Users\Encargado\Desktop\Alvaro\obj\Debug\net5.0-windows\ProyectoCondominio.genruntimeconfig.cache
+C:\Users\Encargado\Desktop\Alvaro\obj\Debug\net5.0-windows\UI\Registros\rMoras.g.cs
+C:\Users\Encargado\Desktop\Alvaro\obj\Debug\net5.0-windows\UI\Registros\rMoras.baml
+C:\Users\Encargado\Desktop\Alvaro\bin\Debug\net5.0-windows\DATA\DBDATOS.db

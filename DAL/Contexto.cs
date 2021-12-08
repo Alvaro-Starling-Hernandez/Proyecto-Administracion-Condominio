@@ -19,6 +19,7 @@ namespace ProyectoCondominio.DAL
         public DbSet<TipoInmueble> TipoInmueble { get; set; }
         public DbSet<TipoMoneda> TipoMoneda { get; set; }
         public DbSet<Vista> Vista { get; set; }
+        public DbSet<Mora> Mora { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

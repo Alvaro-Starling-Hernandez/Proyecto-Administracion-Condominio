@@ -23,6 +23,7 @@ namespace ProyectoCondominio.Entidades
         public int IdTipoAlquiler { get; set; }
         public int IdTipoMoneda { get; set; }
         public int CantidadPeriodo { get; set; }
+        public int MoraId { get; set; }
         public DateTime FechaInicioAlquiler { get; set; } = DateTime.Now;
         public DateTime FechaFinAlquiler { get; set; } = DateTime.Now;
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
@@ -36,5 +37,8 @@ namespace ProyectoCondominio.Entidades
 
         [ForeignKey("IdTipoMoneda")]
         public virtual TipoMoneda TipoMoneda { get; set; }
+
+        [ForeignKey("MoraId")]
+        public virtual Mora Mora { get; set; }
     }
 }

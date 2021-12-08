@@ -39,6 +39,11 @@ namespace ProyectoCondominio.UI.Registros
             TipoMonedaCombobox.ItemsSource = TipoMonedaBLL.GetTipoMoneda();
             TipoMonedaCombobox.SelectedValuePath = "IdTipoMoneda";
             TipoMonedaCombobox.DisplayMemberPath = "Descripcion";
+
+            MoraCombobox.ItemsSource = MoraBLL.GetMora();
+            MoraCombobox.SelectedValuePath = "MoraId";
+            MoraCombobox.DisplayMemberPath = "Porciento";
+
         }
 
         private void Limpiar()
@@ -134,14 +139,43 @@ namespace ProyectoCondominio.UI.Registros
                     MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
-            if (CantidadPeriodoTextBox.Text.Length == 0)
+            if (Convert.ToInt32(CantidadPeriodoTextBox.Text) == 0)
             {
                 esValido = false;
 
                 MessageBox.Show("El campo Cantidad de periodos está vacio", "Fallo",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
-                TelefonoClienteTextBox.Focus();
+                CantidadPeriodoTextBox.Focus();
             }
+
+            if (TipoAlquilerCombobox.Text.Length == 0)
+            {
+                esValido = false;
+
+                MessageBox.Show("El campo Tipo alquiler está vacio", "Fallo",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                TipoAlquilerCombobox.Focus();
+            }
+
+            if (TipoMonedaCombobox.Text.Length == 0)
+            {
+                esValido = false;
+
+                MessageBox.Show("El campo Tipo Moneda está vacio", "Fallo",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                TipoMonedaCombobox.Focus();
+            }
+
+            if (MoraCombobox.Text.Length == 0)
+            {
+                esValido = false;
+
+                MessageBox.Show("El campo % Mora está vacio", "Fallo",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                MoraCombobox.Focus();
+            }
+
+
 
             return esValido;
         }

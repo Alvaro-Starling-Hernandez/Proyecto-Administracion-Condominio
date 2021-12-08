@@ -55,6 +55,9 @@ namespace ProyectoCondominio.Migrations
                     b.Property<int>("IdTipoMoneda")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("MoraId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("NacionalidadCliente")
                         .HasColumnType("TEXT");
 
@@ -74,6 +77,8 @@ namespace ProyectoCondominio.Migrations
                     b.HasIndex("IdTipoAlquiler");
 
                     b.HasIndex("IdTipoMoneda");
+
+                    b.HasIndex("MoraId");
 
                     b.ToTable("Alquiler");
                 });
@@ -180,6 +185,20 @@ namespace ProyectoCondominio.Migrations
                     b.HasIndex("IdTipoInmueble");
 
                     b.ToTable("Inmueble");
+                });
+
+            modelBuilder.Entity("ProyectoCondominio.Entidades.Mora", b =>
+                {
+                    b.Property<int>("MoraId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<float>("Porciento")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("MoraId");
+
+                    b.ToTable("Mora");
                 });
 
             modelBuilder.Entity("ProyectoCondominio.Entidades.Periodo", b =>
@@ -340,7 +359,15 @@ namespace ProyectoCondominio.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ProyectoCondominio.Entidades.Mora", "Mora")
+                        .WithMany()
+                        .HasForeignKey("MoraId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Inmueble");
+
+                    b.Navigation("Mora");
 
                     b.Navigation("TipoAlquiler");
 
