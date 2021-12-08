@@ -11,7 +11,7 @@
         TextElement.FontWeight="Regular"
         TextElement.FontSize="14"
         TextElement.FontFamily="{materialDesign:MaterialDesignFont}"
-        Title="Mis Datos" Height="450" Width="525" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        Title="Mis Datos" Height="475" Width="525" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="10,0,0,0">
             <StackPanel Orientation="Vertical" Margin="0,10">
@@ -19,6 +19,11 @@
                 <StackPanel Margin="0,5,10,0" HorizontalAlignment="Left" >
                     <Label Content="Nombre Completo:" />
                     <TextBox x:Name="NombreCompletoTextBox" Text="{Binding Nombre}" IsEnabled="False" Width="470" Margin="5,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,5,10,0" HorizontalAlignment="Left" >
+                    <Label Content="Nombre De Usuario:" />
+                    <TextBox x:Name="NombreUsuarioTextBox" Text="{Binding NombreUsuario}" IsEnabled="False" Width="470" Margin="5,0,0,0"/>
                 </StackPanel>
 
                 <StackPanel Margin="0,5,10,0" HorizontalAlignment="Left">

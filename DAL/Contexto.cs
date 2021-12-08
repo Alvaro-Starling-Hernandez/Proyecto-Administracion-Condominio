@@ -30,12 +30,38 @@ namespace ProyectoCondominio.DAL
             modelBuilder.Entity<Cliente>().HasData(new Cliente
             {
                 IdCliente = 1,
-                Nombre = "admin",
+                Nombre = "Alvaro Hernandez",
                 TipoDocumento = "Cedula",
-                Documento = "1234",
+                Documento = "999999999",
                 Telefono = "809-999-9999",
                 Correo = "cliente@gmail.com",
+                NombreUsuario = "admin",
                 Clave = "1234"
+            });
+
+            modelBuilder.Entity<TipoMoneda>().HasData(new TipoMoneda
+            {
+                IdTipoMoneda = 1,
+                Descripcion = "Pesos Dominicanos"
+            });
+
+            modelBuilder.Entity<TipoAlquiler>().HasData(new TipoAlquiler
+            {
+                IdTipoAlquiler = 1,
+                Descripcion = "Mensual",
+                Dias = 30
+            }) ;
+
+            modelBuilder.Entity<TipoInmueble>().HasData(new TipoInmueble
+            {
+                IdTipoInmueble = 1,
+                Descripcion = "Departamento"
+            });
+
+            modelBuilder.Entity<TipoInmueble>().HasData(new TipoInmueble
+            {
+                IdTipoInmueble = 2,
+                Descripcion = "Parqueo"
             });
         }
     }

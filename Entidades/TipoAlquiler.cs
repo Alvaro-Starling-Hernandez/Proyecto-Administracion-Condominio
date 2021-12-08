@@ -13,7 +13,5 @@ namespace ProyectoCondominio.Entidades
         public int IdTipoAlquiler { get; set; }
         public string Descripcion { get; set; }
         public int Dias { get; set; }
-        public int DefinidoSistema { get; set; }
-        public int AplicaDias { get; set; }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\App.xaml
-151903303025
+16-880519634
 1-1378801019
-46-779774004
+451831008839
 216788107649
-MainWindow.xaml;UI\Consultas\cAlquiler.xaml;UI\Consultas\cInmueble.xaml;UI\Consultas\cInmuebleALL.xaml;UI\Consultas\cPagoDeDeuda.xaml;UI\Consultas\HistorialDePagos.xaml;UI\Registros\rArquiler.xaml;UI\Registros\rCambiarContrasena.xaml;UI\Registros\rCliente.xaml;UI\Registros\ResumenDeArquiler.xaml;UI\Registros\rInmueble.xaml;UI\Registros\rPagoAlquiler.xaml;UI\Registros\rTipoAlquiler.xaml;UI\Registros\rTipoInmueble.xaml;UI\Registros\rTipoMoneda.xaml;
+Login.xaml;MainWindow.xaml;UI\Consultas\cAlquiler.xaml;UI\Consultas\cInmueble.xaml;UI\Consultas\cInmuebleALL.xaml;UI\Consultas\cPagoDeDeuda.xaml;UI\Consultas\HistorialDePagos.xaml;UI\Registros\rArquiler.xaml;UI\Registros\rCambiarContrasena.xaml;UI\Registros\rCliente.xaml;UI\Registros\ResumenDeArquiler.xaml;UI\Registros\rInmueble.xaml;UI\Registros\rPagoAlquiler.xaml;UI\Registros\rTipoAlquiler.xaml;UI\Registros\rTipoInmueble.xaml;UI\Registros\rTipoMoneda.xaml;
 
 True
 

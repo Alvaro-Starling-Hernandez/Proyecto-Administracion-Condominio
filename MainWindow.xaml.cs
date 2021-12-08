@@ -98,5 +98,12 @@ namespace ProyectoCondominio
             rCliente Rcliente = new rCliente();
             Rcliente.Show();
         }
+
+        private void CerrarSesionMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            this.Close();
+            login.Show();
+        }
     }
 }

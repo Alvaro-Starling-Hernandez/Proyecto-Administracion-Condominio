@@ -39,6 +39,7 @@ namespace ProyectoCondominio.UI.Registros
             NombreCompletoTextBox.IsEnabled = true;
             GuardarButton.IsEnabled = true;
             ModificarButton.IsEnabled = false;
+            NombreUsuarioTextBox.IsEnabled = true;
         }
 
         private bool Validar()
@@ -52,6 +53,15 @@ namespace ProyectoCondominio.UI.Registros
                 MessageBox.Show("El campo Nombre Completo está vacio", "Fallo",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 NombreCompletoTextBox.Focus();
+            }
+
+            if (NombreUsuarioTextBox.Text.Length == 0)
+            {
+                esValido = false;
+
+                MessageBox.Show("El campo Nombre Usuario está vacio", "Fallo",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                NombreUsuarioTextBox.Focus();
             }
 
             if (TipoDeDocumentoTextBox.Text.Length == 0)
@@ -111,6 +121,7 @@ namespace ProyectoCondominio.UI.Registros
                 TelefonoTextBox.IsEnabled = false;
                 NombreCompletoTextBox.IsEnabled = false;
                 GuardarButton.IsEnabled = false;
+                NombreUsuarioTextBox.IsEnabled = false;
                 ModificarButton.IsEnabled = true;
             }
             else

@@ -96,6 +96,9 @@ namespace ProyectoCondominio.Migrations
                     b.Property<string>("Nombre")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("NombreUsuario")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Telefono")
                         .HasColumnType("TEXT");
 
@@ -112,8 +115,9 @@ namespace ProyectoCondominio.Migrations
                             IdCliente = 1,
                             Clave = "1234",
                             Correo = "cliente@gmail.com",
-                            Documento = "1234",
-                            Nombre = "admin",
+                            Documento = "999999999",
+                            Nombre = "Alvaro Hernandez",
+                            NombreUsuario = "admin",
                             Telefono = "809-999-9999",
                             TipoDocumento = "Cedula"
                         });
@@ -187,7 +191,7 @@ namespace ProyectoCondominio.Migrations
                     b.Property<string>("EstadoPeriodo")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("FechaLimitePeriodo")
+                    b.Property<string>("FechaLimitePeriodo")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FechaPago")
@@ -218,12 +222,6 @@ namespace ProyectoCondominio.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("AplicaDias")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("DefinidoSistema")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Descripcion")
                         .HasColumnType("TEXT");
 
@@ -233,6 +231,14 @@ namespace ProyectoCondominio.Migrations
                     b.HasKey("IdTipoAlquiler");
 
                     b.ToTable("TipoAlquiler");
+
+                    b.HasData(
+                        new
+                        {
+                            IdTipoAlquiler = 1,
+                            Descripcion = "Mensual",
+                            Dias = 30
+                        });
                 });
 
             modelBuilder.Entity("ProyectoCondominio.Entidades.TipoInmueble", b =>
@@ -247,6 +253,18 @@ namespace ProyectoCondominio.Migrations
                     b.HasKey("IdTipoInmueble");
 
                     b.ToTable("TipoInmueble");
+
+                    b.HasData(
+                        new
+                        {
+                            IdTipoInmueble = 1,
+                            Descripcion = "Departamento"
+                        },
+                        new
+                        {
+                            IdTipoInmueble = 2,
+                            Descripcion = "Parqueo"
+                        });
                 });
 
             modelBuilder.Entity("ProyectoCondominio.Entidades.TipoMoneda", b =>
@@ -261,6 +279,13 @@ namespace ProyectoCondominio.Migrations
                     b.HasKey("IdTipoMoneda");
 
                     b.ToTable("TipoMoneda");
+
+                    b.HasData(
+                        new
+                        {
+                            IdTipoMoneda = 1,
+                            Descripcion = "Pesos Dominicanos"
+                        });
                 });
 
             modelBuilder.Entity("ProyectoCondominio.Entidades.Vista", b =>

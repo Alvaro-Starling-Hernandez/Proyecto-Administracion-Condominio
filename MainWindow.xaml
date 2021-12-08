@@ -38,10 +38,7 @@
 
                 <MenuItem x:Name="ResumenMenuItem" Header="Resumen de Alquiler" Click="ResumenMenuItem_Click"/>
                 <MenuItem x:Name="MisDatosMenuItem" Header="Mis Datos" Click="MisDatosMenuItem_Click"/>
-
-                <MenuItem Header="Opciones">
-                    <MenuItem x:Name="CambiarContrasenaMenuItem" Header="Cambiar Contraseña" />
-                </MenuItem>
+                <MenuItem x:Name="CerrarSesionMenuItem" Header="Cerrar Sesion" Click="CerrarSesionMenuItem_Click"/>
             </Menu>
         </StackPanel>
     </Grid>

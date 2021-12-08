@@ -19,6 +19,7 @@ namespace ProyectoCondominio.BLL
         }
 
         public static Inmueble inmuebleAux;
+        public static Deuda deudaAux;
         public static bool InmuebleSelect = false;
     }
 }

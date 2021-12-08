@@ -93,5 +93,6 @@ C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Registros\rCliente.g.cs
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Registros\rCliente.baml
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Registros\rCambiarContrasena.g.cs
-C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\UI\Registros\rCambiarContrasena.baml
+C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\Login.g.cs
+C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\Login.baml

@@ -50,23 +50,12 @@
                         <DataGridTemplateColumn Width="100" Header="Pagar">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button x:Name="PagarButton" Width="55" Background="Yellow" BorderBrush="Yellow" >
+                                    <Button x:Name="PagarButton" Width="55" Background="Yellow" BorderBrush="Yellow" Click="PagarButton_Click">
                                         <materialDesign:PackIcon Kind="Dollar" Foreground="Black" Width="25" Height="25" HorizontalAlignment="Center"/>
                                     </Button>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-
-                        <DataGridTemplateColumn Width="100" Header="Descargar">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button x:Name="DescargarButtom" Width="55">
-                                        <materialDesign:PackIcon Kind="Download" Width="25" Height="25" HorizontalAlignment="Center"/>
-                                    </Button>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-
 
                     </DataGrid.Columns>
                 </DataGrid>

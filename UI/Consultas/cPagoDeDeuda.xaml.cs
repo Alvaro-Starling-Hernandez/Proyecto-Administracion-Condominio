@@ -2,6 +2,7 @@
 using ProyectoCondominio.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,6 +68,32 @@ namespace ProyectoCondominio.UI.Consultas
                 MessageBox.Show("No existe Alquiler con este Id!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Criterio_TextBox.Focus();
             }
+        }
+
+        private void PagarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Utilidades.deudaAux = (Deuda)DatosDataGrid.SelectedItem;
+            var deuda = DeudaBLL.Buscar(Utilidades.deudaAux.IdDeuda);
+            if (Utilidades.deudaAux.EstadoDeuda == "PENDIENTE")
+            {
+
+                if (MessageBox.Show("¿Desea cancelar la deuda?", "Mensaje", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    deuda.EstadoDeuda = "CANCELADO";
+                    deuda.FechaPago = DateTime.Now.ToString("dd-MM-yyyy", new CultureInfo("en-US"));
+                    var paso = DeudaBLL.Guardar(deuda);
+
+                    var periodo = PeriodoBLL.Buscar(deuda.IdPeriodo);
+                    periodo.EstadoPeriodo = "CANCELADO";
+                    var paso2 = PeriodoBLL.Guardar(periodo);
+                    Buscar_Button_Click(sender, e);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Esta Deuda se encuentra paga!", "Avertencia", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+
         }
     }
 }

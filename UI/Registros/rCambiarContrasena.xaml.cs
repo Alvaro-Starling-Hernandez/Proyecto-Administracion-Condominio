@@ -89,9 +89,9 @@ namespace ProyectoCondominio.UI.Registros
 
             if (paso)
             {
-                MessageBox.Show("Contraseña Cambiada!", "Exito",
+                MessageBox.Show("Contraseña Cambiada", "Exito",
                     MessageBoxButton.OK, MessageBoxImage.Information);
-                Close();
+                this.Close();
             }
             else
                 MessageBox.Show("Transaccion Fallida!", "Fallo",
