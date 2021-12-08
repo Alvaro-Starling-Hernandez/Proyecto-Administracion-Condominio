@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\obj\Debug\net5.0-windows\
+C:\Users\Encargado\Desktop\Alvaro\obj\Debug\net5.0-windows\
 ProyectoCondominio
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\alvar\OneDrive\Escritorio\Alvaro-PC\ProyectoCondominio\App.xaml
+C:\Users\Encargado\Desktop\Alvaro\App.xaml
 16-880519634
 1-1378801019
 451831008839
-216788107649
+2161693106627
 Login.xaml;MainWindow.xaml;UI\Consultas\cAlquiler.xaml;UI\Consultas\cInmueble.xaml;UI\Consultas\cInmuebleALL.xaml;UI\Consultas\cPagoDeDeuda.xaml;UI\Consultas\HistorialDePagos.xaml;UI\Registros\rArquiler.xaml;UI\Registros\rCambiarContrasena.xaml;UI\Registros\rCliente.xaml;UI\Registros\ResumenDeArquiler.xaml;UI\Registros\rInmueble.xaml;UI\Registros\rPagoAlquiler.xaml;UI\Registros\rTipoAlquiler.xaml;UI\Registros\rTipoInmueble.xaml;UI\Registros\rTipoMoneda.xaml;
 
-True
+False
 
