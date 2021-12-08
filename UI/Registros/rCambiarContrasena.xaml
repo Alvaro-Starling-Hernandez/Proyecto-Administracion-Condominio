@@ -1,0 +1,53 @@
+﻿<Window x:Class="ProyectoCondominio.UI.Registros.rCambiarContrasena"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoCondominio.UI.Registros"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="14"
+        TextElement.FontFamily="{materialDesign:MaterialDesignFont}"
+        Title="Cambiar Contraseña" Height="350" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+            <StackPanel Orientation="Vertical" Margin="0,10">
+
+                <StackPanel Margin="0,5,10,0" HorizontalAlignment="Left" >
+                    <Label Content="Contraseña Actual:" />
+                    <PasswordBox x:Name="ContrasenaPasswordBox" Width="260"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,10,10,0" HorizontalAlignment="Left">
+                    <Label Content="Nueva Contraseña:"/>
+                    <PasswordBox x:Name="NuevaPasswordBox" Width="260"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,10,10,0" HorizontalAlignment="Left">
+                    <Label Content="Confirmar Contraseña:"/>
+                    <PasswordBox x:Name="ConfirmarPasswordBox" Width="260"/>
+                </StackPanel>
+                </StackPanel>
+
+
+            <StackPanel Orientation="Horizontal" Margin="5,35" HorizontalAlignment="Left">
+                <Button x:Name="AceptarButton" Click="AceptarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Done" Width="25" Height="25"/>
+                        <Label Content="Aceptar" FontWeight="Bold" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="CancelarButton" Margin="20,0" Click="CancelarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Cancel"  Width="25" Height="25"/>
+                        <Label Content="Cancelar" FontWeight="Bold" Foreground="White"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

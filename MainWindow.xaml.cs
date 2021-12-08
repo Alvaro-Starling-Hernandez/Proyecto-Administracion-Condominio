@@ -92,5 +92,11 @@ namespace ProyectoCondominio
             cPagoDeDeuda cPagoDeDeudaObj = new cPagoDeDeuda();
             cPagoDeDeudaObj.Show();
         }
+
+        private void MisDatosMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            rCliente Rcliente = new rCliente();
+            Rcliente.Show();
+        }
     }
 }

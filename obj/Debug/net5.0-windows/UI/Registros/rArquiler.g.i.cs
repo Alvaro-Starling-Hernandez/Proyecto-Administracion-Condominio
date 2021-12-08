@@ -232,7 +232,7 @@ namespace ProyectoCondominio.UI.Registros {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProyectoCondominio;component/ui/registros/rarquiler.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ProyectoCondominio;V1.0.0.0;component/ui/registros/rarquiler.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\UI\Registros\rArquiler.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

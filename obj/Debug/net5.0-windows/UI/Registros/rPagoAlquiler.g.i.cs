@@ -224,7 +224,7 @@ namespace ProyectoCondominio.UI.Registros {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProyectoCondominio;component/ui/registros/rpagoalquiler.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ProyectoCondominio;V1.0.0.0;component/ui/registros/rpagoalquiler.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\UI\Registros\rPagoAlquiler.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -25,6 +25,12 @@
     <Compile Update="UI\Registros\rArquiler.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\Registros\rCambiarContrasena.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\Registros\rCliente.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\Registros\ResumenDeArquiler.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +70,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Registros\rArquiler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Registros\rCambiarContrasena.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Registros\rCliente.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Registros\ResumenDeArquiler.xaml">

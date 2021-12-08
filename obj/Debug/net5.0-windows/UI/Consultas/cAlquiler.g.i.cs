@@ -160,7 +160,7 @@ namespace ProyectoCondominio.UI.Consultas {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProyectoCondominio;component/ui/consultas/calquiler.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ProyectoCondominio;V1.0.0.0;component/ui/consultas/calquiler.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\UI\Consultas\cAlquiler.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
