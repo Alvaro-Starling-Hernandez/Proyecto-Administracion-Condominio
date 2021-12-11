@@ -25,6 +25,12 @@
     <Compile Update="UI\Consultas\HistorialDePagos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\Recibos\ContratoDeAlquiler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\Recibos\FacturaPagoAlquiler.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\Registros\rArquiler.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -76,6 +82,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Consultas\HistorialDePagos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Recibos\ContratoDeAlquiler.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Recibos\FacturaPagoAlquiler.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Registros\rArquiler.xaml">

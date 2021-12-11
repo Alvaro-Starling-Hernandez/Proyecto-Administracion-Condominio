@@ -70,11 +70,11 @@
                         <DataGridTextColumn x:Name="C7" Header="Id Tipo Alquiler" Binding="{Binding IdTipoAlquiler}" />
                         <DataGridTextColumn x:Name="C8" Header="Estado" Binding="{Binding Estado}" />
 
-                        <DataGridTemplateColumn Width="100" Header="Descargar">
+                        <DataGridTemplateColumn Width="100" Header="Imprimir">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button x:Name="DescargarButtom" Width="55">
-                                        <materialDesign:PackIcon Kind="Download" Width="25" Height="25" HorizontalAlignment="Center"/>
+                                    <Button x:Name="DescargarButtom" Width="55" Click="DescargarButtom_Click">
+                                        <materialDesign:PackIcon Kind="Printer" Width="25" Height="25" HorizontalAlignment="Center"/>
                                     </Button>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

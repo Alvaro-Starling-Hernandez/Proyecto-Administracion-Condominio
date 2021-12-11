@@ -1,5 +1,6 @@
 ﻿using ProyectoCondominio.BLL;
 using ProyectoCondominio.Entidades;
+using ProyectoCondominio.UI.Recibos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -144,6 +145,61 @@ namespace ProyectoCondominio.UI.Consultas
 
             var conteo = listado.Count;
             ConteoTextbox.Text = conteo.ToString();
+        }
+
+        private void DescargarButtom_Click(object sender, RoutedEventArgs e)
+        {
+            ContratoDeAlquiler contrato = new ContratoDeAlquiler();
+
+            var alquiler = (Alquiler)DatosDataGrid.SelectedItem;
+
+            contrato.FechaRegistroLabel.Content = alquiler.FechaRegistro.ToShortDateString();
+            contrato.CodigoLabel.Content = alquiler.CodigoAlquiler;
+            contrato.NombreCompletoInquilinoLabel.Content = alquiler.NombreCliente;
+            contrato.TipoDocuemntoInquilinoLabel.Content = alquiler.TipoDocumentoCliente;
+            contrato.DocuemntoInquilinoLabel.Content = alquiler.DocumentoCliente;
+            contrato.CorreoInquilinoLabel.Content = alquiler.CorreoCliente;
+            contrato.TelefonoInquilinoLabel.Content = alquiler.TelefonoCliente;
+            contrato.FechaInicioLabel.Content = alquiler.FechaInicioAlquiler.ToShortDateString();
+            contrato.CantidadPeriodoslabel.Content = alquiler.CantidadPeriodo;
+
+            var propietario = ClienteBLL.Buscar(1);
+            contrato.NombreCompletoLabel.Content = propietario.Nombre;
+            contrato.TipoDocuemntoLabel.Content = propietario.TipoDocumento;
+            contrato.DocuemntoLabel.Content = propietario.Documento;
+            contrato.CorreoLabel.Content = propietario.Correo;
+            contrato.TelefonoLabel.Content = propietario.Telefono;
+
+            var inmueble = InmuebleBLL.Buscar(alquiler.IdInmueble);
+
+            contrato.CodigoImuebleLabel.Content = inmueble.Codigo;
+            contrato.DescripcionLabel.Content = inmueble.Descripcion;
+            contrato.PrecioLabel.Content = inmueble.PrecioAlquiler;
+
+
+            var tipoInmueble = TipoInmuebleBLL.Buscar(inmueble.IdTipoInmueble);
+            contrato.TipoInmuebleLael.Content = tipoInmueble.Descripcion;
+
+            var tipoAlquiler = TipoAlquilerBLL.Buscar(alquiler.IdTipoAlquiler);
+            contrato.TipoAlquilerLabel.Content = tipoAlquiler.Descripcion;
+
+            var tipoMoneda = TipoMonedaBLL.Buscar(alquiler.IdTipoMoneda);
+            contrato.TipoMonedaLabel.Content = tipoMoneda.Descripcion;
+
+
+            try
+            {
+                this.IsEnabled = false;
+                PrintDialog printDialog = new PrintDialog();
+                if (printDialog.ShowDialog() == true)
+                {
+                    printDialog.PrintVisual(contrato.print2, "Detalle De Contrato");
+                }
+            }
+            finally
+            {
+                this.IsEnabled = true;
+            }
         }
     }
 }

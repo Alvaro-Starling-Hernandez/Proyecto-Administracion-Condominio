@@ -1,5 +1,6 @@
 ﻿using ProyectoCondominio.BLL;
 using ProyectoCondominio.Entidades;
+using ProyectoCondominio.UI.Recibos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Navigation;
 
 namespace ProyectoCondominio.UI.Consultas
 {
@@ -56,6 +58,54 @@ namespace ProyectoCondominio.UI.Consultas
             {
                 MessageBox.Show("No existe Alquiler con este Id!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Criterio_TextBox.Focus();
+            }
+        }
+
+        private void DescargarButtom_Click(object sender, RoutedEventArgs e)
+        {
+            FacturaPagoAlquiler facturaPago = new FacturaPagoAlquiler();
+
+            var periodo = (Periodo)DatosDataGrid.SelectedItem;
+
+            facturaPago.FechaPagoLabel.Content = periodo.FechaPago;
+            facturaPago.NumeroPeriodo.Content = periodo.NumeroPeriodo;
+            facturaPago.ImportePagado.Content = periodo.Monto;
+
+            var propietario = ClienteBLL.Buscar(1);
+            facturaPago.NombreCompletoLabel.Content = propietario.Nombre;
+            facturaPago.TipoDocuemntoLabel.Content = propietario.TipoDocumento;
+            facturaPago.DocuemntoLabel.Content = propietario.Documento;
+
+
+
+            var alquilerSelecionado = AlquilerBLL.Buscar(periodo.IdAlquiler);
+
+            facturaPago.CodigoLabel.Content = alquilerSelecionado.CodigoAlquiler;
+            facturaPago.NombreCompletoInquilinoLabel.Content = alquilerSelecionado.NombreCliente;
+            facturaPago.TipoDocuemntoInquilinoLabel.Content = alquilerSelecionado.TipoDocumentoCliente;
+            facturaPago.DocuemntoInquilinoLabel.Content = alquilerSelecionado.DocumentoCliente;
+
+            var inmueble = InmuebleBLL.Buscar(alquilerSelecionado.IdInmueble);
+
+            facturaPago.CodigoImuebleLabel.Content = inmueble.Codigo;
+            facturaPago.DescripcionLabel.Content = inmueble.Descripcion;
+
+            var tipoInmueble = TipoInmuebleBLL.Buscar(inmueble.IdTipoInmueble);
+            facturaPago.TipoInmuebleLael.Content = tipoInmueble.Descripcion;
+
+
+            try
+            {
+                this.IsEnabled = false;
+                PrintDialog printDialog = new PrintDialog();
+                if (printDialog.ShowDialog() == true)
+                {
+                    printDialog.PrintVisual(facturaPago.print, "Factura Pago Alquiler");
+                }
+            }
+            finally
+            {
+                this.IsEnabled = true;
             }
         }
     }

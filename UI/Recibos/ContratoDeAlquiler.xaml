@@ -1,0 +1,170 @@
+﻿<Window x:Class="ProyectoCondominio.UI.Recibos.ContratoDeAlquiler"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoCondominio.UI.Recibos"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="16"
+        TextElement.FontFamily="{materialDesign:MaterialDesignFont}"
+        Title="Detalle De Contrato" Height="1200" Width="793.92" WindowStyle="None" ResizeMode="NoResize">
+    <Grid x:Name="print2">
+        <StackPanel Margin="30">
+            <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                <Label Content="Detalle de Contrato" HorizontalAlignment="Center" FontWeight="Bold" FontSize="30" Margin="0,0,0,20"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Fecha Registro:" FontWeight="Medium"/>
+                        <Label x:Name="FechaRegistroLabel" Content="Fecha" Margin="35,0,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="300,0,0,0">
+                        <Label Content="Codigo Alquiler:" FontWeight="Medium"/>
+                        <Label x:Name="CodigoLabel" Content="Codigo" Margin="20,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <Line X1="0" X2="763.92" Y1="1" Y2="1" Stroke="Black" StrokeThickness="2"/>
+
+            <StackPanel Margin="0,10" Orientation="Vertical">
+                <Label Content="Datos del Propietario:" FontWeight="Bold" FontSize="20" Margin="0,0,0,10"/>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Nombre Completo:" FontWeight="Medium"/>
+                    <Label x:Name="NombreCompletoLabel" Content="Nombre" Margin="40,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Tipo de documento:" FontWeight="Medium"/>
+                    <Label x:Name="TipoDocuemntoLabel" Content="TipoDocuemnto" Margin="33,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="No. Documento:" FontWeight="Medium"/>
+                    <Label x:Name="DocuemntoLabel" Content="Documento" Margin="58,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Correo Electronico:" FontWeight="Medium"/>
+                    <Label x:Name="CorreoLabel" Content="Correo" Margin="40,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Telefono:" FontWeight="Medium"/>
+                    <Label x:Name="TelefonoLabel" Content="Telefono" Margin="110,0,0,0"/>
+                </StackPanel>
+
+
+            </StackPanel>
+
+
+            <Line X1="0" X2="763.92" Y1="1" Y2="1" Stroke="Black" StrokeThickness="2"/>
+
+            <StackPanel Margin="0,20" Orientation="Vertical">
+                <Label Content="Datos del Inquilino:" FontWeight="Bold" FontSize="20" Margin="0,0,0,10"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Nombre Completo:" FontWeight="Medium"/>
+                    <Label x:Name="NombreCompletoInquilinoLabel" Content="Nombre" Margin="40,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Tipo de documento:" FontWeight="Medium"/>
+                    <Label x:Name="TipoDocuemntoInquilinoLabel" Content="TipoDocuemnto" Margin="33,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="No. Documento:" FontWeight="Medium"/>
+                    <Label x:Name="DocuemntoInquilinoLabel" Content="Documento" Margin="59,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Correo Electronico:" FontWeight="Medium"/>
+                    <Label x:Name="CorreoInquilinoLabel" Content="Correo" Margin="40,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Telefono:" FontWeight="Medium"/>
+                    <Label x:Name="TelefonoInquilinoLabel" Content="Telefono" Margin="110,0,0,0"/>
+                </StackPanel>
+
+            </StackPanel>
+
+
+            <Line X1="0" X2="763.92" Y1="1" Y2="1" Stroke="Black" StrokeThickness="2"/>
+
+            <StackPanel Margin="0,20" Orientation="Vertical">
+                <Label Content="Datos del Inmueble:" FontWeight="Bold" FontSize="20" Margin="0,0,0,10"/>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Codigo Inmueble:" FontWeight="Medium"/>
+                    <Label x:Name="CodigoImuebleLabel" Content="Codigo" Margin="46,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Descripcion:" FontWeight="Medium"/>
+                    <Label x:Name="DescripcionLabel" Content="Descripcion" Margin="80,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Tipo Inmueble:" FontWeight="Medium"/>
+                    <Label x:Name="TipoInmuebleLael" Content="Tipo" Margin="63,0,0,0"/>
+                </StackPanel>
+                 
+
+            </StackPanel>
+
+
+
+            <Line X1="0" X2="763.92" Y1="1" Y2="1" Stroke="Black" StrokeThickness="2"/>
+
+            <StackPanel Margin="0,20" Orientation="Vertical">
+                <Label Content="Resumen Alquiler:" FontWeight="Bold" FontSize="20" Margin="0,0,0,10"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Fecha Inicio Alquiler:" FontWeight="Medium"/>
+                    <Label x:Name="FechaInicioLabel" Content="111" Margin="20,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Tipo Alquiler:" FontWeight="Medium"/>
+                    <Label x:Name="TipoAlquilerLabel" Content="111" Margin="75,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Cant. de Periodos:" FontWeight="Medium"/>
+                    <Label x:Name="CantidadPeriodoslabel" Content="111" Margin="39,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Tipo Moneda:" FontWeight="Medium"/>
+                    <Label x:Name="TipoMonedaLabel" Content="111" Margin="72,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Precio Alquiler:" FontWeight="Medium"/>
+                    <Label x:Name="PrecioLabel" Content="111" Margin="62,0,0,0"/>
+                </StackPanel>
+
+            </StackPanel>
+
+
+            <StackPanel Margin="10,60,0,10" Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <Line X1="0" X2="250" Y1="1" Y2="1" Stroke="Black" StrokeThickness="1"/>
+                    <Label Content="Firma del Inquilino" Margin="50,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel  Orientation="Vertical" Margin="215,0,0,0">
+                    <Line X1="0" X2="250" Y1="1" Y2="1" Stroke="Black" StrokeThickness="1"/>
+                    <Label Content="Firma del Propietario" Margin="50,0,0,0"/>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

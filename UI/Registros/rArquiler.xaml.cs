@@ -246,7 +246,7 @@ namespace ProyectoCondominio.UI.Registros
             
             if(CantidadPeriodoTextBox.IsEnabled == true)
             {
-                alquiler.FechaInicioAlquiler = Convert.ToDateTime(FechaInicioAlquilerDatePicker.Text);
+                alquiler.FechaInicioAlquiler = (DateTime)FechaInicioAlquilerDatePicker.SelectedDate;
                 alquiler.CantidadPeriodo = Convert.ToInt32(CantidadPeriodoTextBox.Text);
                 DateTime fechafinperiodo = alquiler.FechaInicioAlquiler;
                 List<Periodo> listaPeriodos = new List<Periodo>();
